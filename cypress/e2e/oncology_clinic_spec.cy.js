@@ -48,31 +48,39 @@ describe("Acccess the oncology platform",()=>{
         cy.get('.chk-provisional').check({force:true})
         cy.get('.doing > ul > :nth-child(5) > span').click()
         cy.get('#investigation').type("ct scan")
-        cy.get('li[role="presentation"]').each(function($ele, index, list){
-          if($ele.text().includes("ct scan, pelvis")){
-            cy.wrap($ele).click({force:true}).wait(500)
-          }
-        })
-        /*cy.wait(500)
+        cy.contains("CT scan, pelvis").click()
+
+        cy.wait(3000)
         cy.get('.chk-provisional').check({force:true})
         cy.get('.doing > ul > :nth-child(5) > span').click()
-        cy.get('#investigation').type("mamm")
-        cy.get('li[role="presentation"]').each(function($ele, index, list){
-          if($ele.text().includes("mammogram")){
-            cy.wrap($ele).click()
-          }
-        })
+        cy.get('#investigation').type("ct scan")
+        cy.contains("CT scan, chest").click()
+      
         cy.wait(500)
         cy.get('.chk-provisional').check({force:true})
         cy.get('.doing > ul > :nth-child(5) > span').click()
         cy.get('#investigation').type("vdrl")
-        cy.get('li[role="presentation"]').each(function($ele, index, list){
-          if($ele.text().includes("vdrl")){
-            cy.wrap($ele).click()
-          }
-        })*/
+        cy.contains("VDRL").click().wait(300)
 
-        cy.get('.doing > ul > :nth-child(6) > span').click()
+         cy.wait(500)
+        cy.get('.chk-provisional').check({force:true})
+        cy.get('.doing > ul > :nth-child(5) > span').click()
+        cy.get('#investigation').type("Complete Blood")
+        cy.contains("COMPLETE BLOOD COUNT").click().wait(300)
+
+        cy.wait(500)
+        cy.get('.chk-provisional').check({force:true})
+        cy.get('.doing > ul > :nth-child(5) > span').click()
+        cy.get('#investigation').type("Blood trans")
+        cy.get('li[role="presentation"]').wait(300).each(function($ele, index, list){
+          if($ele.text().includes("Blood transfusion")){
+            cy.wrap($ele).click({force:true}).clear()
+          }
+        })
+        
+        
+
+        /*cy.get('.doing > ul > :nth-child(6) > span').click()
         cy.get('#add-prescription').click()
         cy.get('#drugSearch').type("Paractemol")
         cy.get('li[role="presentation"]').wait(300).each(function($ele, index, list){
@@ -97,7 +105,7 @@ describe("Acccess the oncology platform",()=>{
         cy.get('.drug-frequency').select("Thrice daily")
         cy.get('.drug-number-of-days').type("5")
         cy.get('.drug-comment').type("needs constant care")
-        cy.get('#prescription-dialog > .dialog-content > .confirm').click()
+        cy.get('#prescription-dialog > .dialog-content > .confirm').click()*/
 
         cy.get('.doing > ul > :nth-child(8) > span').click()
         cy.get(':nth-child(2) > .chk-mdt').click()
