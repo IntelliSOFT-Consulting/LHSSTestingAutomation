@@ -41,7 +41,7 @@ describe("Acccess the oncology platform",()=>{
        
         cy.get('li[role="presentation"]').each(function($ele, index, list){
           if($ele.text().includes("Throat Cancer")){
-            cy.wrap($ele).click({force:true}).wait({force})
+            cy.wrap($ele).click({force:true}).wait({force:true})
           }
         
         cy.wait(3000)
@@ -50,16 +50,16 @@ describe("Acccess the oncology platform",()=>{
         cy.get('#investigation').type("ct scan")
         cy.get('li[role="presentation"]').each(function($ele, index, list){
           if($ele.text().includes("ct scan, pelvis")){
-            cy.wrap($ele).click({force:true})
+            cy.wrap($ele).click({force:true}).wait(500)
           }
         })
-        cy.wait(500)
+        /*cy.wait(500)
         cy.get('.chk-provisional').check({force:true})
         cy.get('.doing > ul > :nth-child(5) > span').click()
         cy.get('#investigation').type("mamm")
         cy.get('li[role="presentation"]').each(function($ele, index, list){
           if($ele.text().includes("mammogram")){
-            cy.wrap($ele).click({force:true})
+            cy.wrap($ele).click()
           }
         })
         cy.wait(500)
@@ -68,9 +68,9 @@ describe("Acccess the oncology platform",()=>{
         cy.get('#investigation').type("vdrl")
         cy.get('li[role="presentation"]').each(function($ele, index, list){
           if($ele.text().includes("vdrl")){
-            cy.wrap($ele).click({force:true})
+            cy.wrap($ele).click()
           }
-        })
+        })*/
 
         cy.get('.doing > ul > :nth-child(6) > span').click()
         cy.get('#add-prescription').click()
