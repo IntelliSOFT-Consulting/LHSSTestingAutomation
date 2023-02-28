@@ -10,7 +10,11 @@ describe("Acccess the oncology platform",()=>{
       it("test1-test functionality of oncology lab ",()=>{
         cy.get('button[type=submit]').click()
         cy.contains("Laboratory").click()
-        cy.get('#search-queue-for').type("")
+        cy.get(':nth-child(1) > :nth-child(8) > #action-icons > :nth-child(2) > a > .icon-ok').click()
+        cy.get('#accept-form > .dialog-content > .confirm').click()
+        cy.get('a > .icon-ok').click()
+        cy.get('#accept-form > .dialog-content > .confirm').click()
+       
       })
 
     })

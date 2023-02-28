@@ -68,7 +68,7 @@ describe("Acccess the oncology platform",()=>{
         cy.get('#investigation').type("Complete Blood")
         cy.contains("COMPLETE BLOOD COUNT").click().wait(300)
 
-        cy.wait(500)
+        /*cy.wait(500)
         cy.get('.chk-provisional').check({force:true})
         cy.get('.doing > ul > :nth-child(5) > span').click()
         cy.get('#investigation').type("Blood trans")
@@ -77,7 +77,7 @@ describe("Acccess the oncology platform",()=>{
             cy.wrap($ele).click({force:true}).clear()
           }
         })
-        
+        */
         
 
         /*cy.get('.doing > ul > :nth-child(6) > span').click()

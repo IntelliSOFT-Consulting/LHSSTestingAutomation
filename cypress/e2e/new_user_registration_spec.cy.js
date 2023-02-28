@@ -27,7 +27,7 @@ describe("Acccess the oncology platform",()=>{
         cy.get("select[name='occupation']").select("Trader",{force:true})
         cy.get('select[name="education"]').select("Primary school education",{force:true})
         cy.get('#select-kenya-option').check()
-        cy.get("input[name='telephoneContact']").type("0723164768")
+        cy.get("input[name='telephoneContact']").type("0723324768")
         cy.get('#county').select("Nairobi")
         cy.get('#subCounty').select("Starehe")
         cy.get('#ward').select("Ngara")
