@@ -50,7 +50,7 @@ For inter-connected processes from different modules, the previous module has to
 
 ## File structure
 
-.
+.LHSSTestingAutomation
 ├── cypress
 │   ├── downloads
 │   │
@@ -71,10 +71,10 @@ For inter-connected processes from different modules, the previous module has to
 |   |  |
 |   |  └── new_user_registrationn.cy.js
 │   ├── fixtures
-│   │   ├── example.json
-|   |   ├── person.jpeg
-|   |   └── woman.jpeg
-│   ├── Integration // Screenshots (set "screenshot": true in cypress.json)
+│   │   |
+|   |   |
+|   |   └── example.json
+│   |
 │   └──  support
 │        ├── commands.js // User Custom commands for Cypress
 |        |
@@ -85,13 +85,21 @@ For inter-connected processes from different modules, the previous module has to
 ├── cypress.config.js // Cypress configuration file
 |
 └── Readme.md //Readme file
+```
+## Tessts
+```
 
+## 1. Login
+click on the login_page.cy.js file to run the test.This test should test for the different instances a user can try to log into the application such as using wrong credentials, without inputting some credentials while leaving out others, and negative login tests
 
-## 1. Install Cypress
-click on the registration_spec.js file to run the test. This test should perform a new user registration into the application and perform actions such as chnging the new user's image
+## 2. Local search
+click on the localsearch.cy.js file to run this test. This test is used to performa a local search from the registration module.
 
-## 2. Login
-click on the login_spec.js file to run the test. This test should test for the different instances a user can try to log into the application such as using wrong credentials, without inputting some credentials while leaving out others, and negative login tests.
+## 3. New user Regegistration
+Click on the new_user_registtration.cy.js file to run this test. It enables a new user creation from the normal registration module and a subsequent filling of the screening form.
 
-## 3. Faker Library
-The names in the files are randomly generated using thefaker.js library and can be installed using 
+## 4. Cross border module
+Tests on this module can be run by clicking on the crossborder_registration. It tests the functionality of the components present on the cross border module such as the advanced search, radio buttons, checkboxes, and the search icons before registering that searched patient.
+
+## 5. Faker Library
+The names in the files are randomly generated using the faker.js library and can be installed using npm install @faker-js/faker --save-dev
