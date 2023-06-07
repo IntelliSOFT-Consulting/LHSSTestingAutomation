@@ -21,7 +21,7 @@ Run this command to install the specific version needed for this project.
 
 
 ## cd into the cloned repo
-cd LHSSTests
+cd LHSSTestingAutomation
 
 ## install the node_modules
 npm install
@@ -57,19 +57,19 @@ For inter-connected processes from different modules, the previous module has to
 |   |   
 |   |   
 │   ├── e2e
-│   │  ├── ambulance // Tests for the ambulance request 
+│   │  ├── crossborder_registration.cy.js
 │   │  |
 │   │  |    
 │   │  |
-│   │  ├── Appointments // Tests for all types of appointments(upcoming appointments & Past Appointments)
+│   │  ├── LOcalsearch.cy.js
 │   │  |     
-│   │  ├── Facilities // Tests for finding available facilities
+│   │  |
 │   │  | 
-│   │  ├── homepage//Test for user homepage
-|   |  ├──login //Test for the login page
-|   |  ├──login_spec// Tests  for the functionality of the login 
-|   |  ├──registration
-|   |  └── your_records
+│   │  |
+|   |  ├──login_page.cy.js
+|   |  |
+|   |  |
+|   |  └── new_user_registrationn.cy.js
 │   ├── fixtures
 │   │   ├── example.json
 |   |   ├── person.jpeg
