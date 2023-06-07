@@ -10,6 +10,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@faker-js/faker": "^7.6.0",
     "cypress": "^12.4.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^15.2.1",
+    "@angular/common": "^15.2.1",
+    "@angular/core": "^15.2.1",
+    "@angular/platform-browser-dynamic": "^15.2.1",
+    "cypress-xpath": "^2.0.1"
   }
 }
