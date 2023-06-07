@@ -21,7 +21,7 @@ Run this command to install the specific version needed for this project.
 
 
 ## cd into the cloned repo
-cd LHSSTests
+cd LHSSTstingAutomation
 
 ## install the node_modules
 npm install
