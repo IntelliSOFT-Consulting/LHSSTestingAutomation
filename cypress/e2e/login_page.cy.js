@@ -1,7 +1,7 @@
 
 import '../support/commands' 
 
-describe("Acccess the oncology platform",()=>{
+describe("Acccess the LHSS platform",()=>{
     beforeEach(()=>{
         cy.base_url()
         
