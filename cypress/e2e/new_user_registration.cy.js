@@ -4,16 +4,16 @@ import { faker } from '@faker-js/faker';
 const firstName = faker.name.firstName();
 const middleName = faker.name.middleName();
 const familyName = faker.name.lastName();
-const emailAddress = familyName.toLowerCase() + firstName.toLowerCase() 
-/*const nextofkinfirstname = faker.name.firstname();
+const emailAddress = familyName.toLowerCase() +firstName.toLowerCase() 
+/*const nextofkiame = faker.nameame();
 const nextofkinlastname = faker.name.nlastname();
-const nextOfKinName = nextofkinfirstname + ' ' + nextofkinlastname*/
+const nextOfKinName = nextofkiame + ' ' + nextofkinlastname*/
 
 
 describe("Acccess the oncology platform",()=>{
     beforeEach(()=>{
       
-        cy.base_url()
+        cy.baseurl()
         cy.login() 
         cy.contains("Login").click()
         //cy.get('.ke-apptoolbar > .ke-toolbar-item > a').click()
@@ -47,7 +47,7 @@ describe("Acccess the oncology platform",()=>{
         cy.get('select[name="maritalStatus"]').select("Married monogamous",{force:true})
         cy.get("select[name='occupation']").select("Trader",{force:true})
         cy.get('select[name="education"]').select("Primary school education",{force:true})
-        //cy.get('#select-kenya-option').check()
+        cy.get('#select-kenya-option').check()
         
         const contact = () => Cypress._.random(0, 1e8)
 
@@ -56,9 +56,10 @@ describe("Acccess the oncology platform",()=>{
         cy.get('input[name="emailAddress"]').type(`${emailAddress}@gmail.com`)
         //cy.get('#county').select("Nairobi")
         cy.get('select[name="personAddress.countyDistrict"]').select("Nairobi")
-        cy.get('input[name="personAddress.stateProvince"]').type("Starehe")
+        cy.get('select[id="subCounty"]').select("Starehe")
+        cy.get('select[id="ward"]').select("Ngara")
         cy.get('input[name="personAddress.cityVillage"]').type("Ngara")
-        cy.get('input[name="personAddress.address4"]').type("Ngara")
+        
         cy.get('input[name="personAddress.address5"]').type("Ngara")
         cy.get('input[name="personAddress.address6"]').type("Ngara")
         cy.get('input[name="personAddress.address2"]').type("Ngara Shopping Plaza")
@@ -70,12 +71,25 @@ describe("Acccess the oncology platform",()=>{
 
         const  nextOfKinphoneNumber = nextOfKincontact();
         cy.get("input[name='nextOfKinContact']").type(`07${nextOfKinphoneNumber}`,'{enter}')
-        cy.get('.ke-panel-footer > button').click()
+        /*cy.get('.ke-panel-footer > button').click()
+       */
+        cy.contains("Post to Registry").click()
+        cy.get("#createPatientBtn").click()
         cy.contains("Check in for visit").click()
         cy.contains("Submit").click()
 
-        cy.contains("Mobility Screening form").click()
+        cy.contains("Cross Border Screening").click()
+        cy.get('select[name="w8"]').select("Kenya")
+        cy.get('input[name="w10"]').first().check()
+        cy.get('input[name="w12"]').first().check()
+        cy.get('input[name="w14"]').first().check()
+        cy.get('input[name="w16"]').first().check()
+        cy.get('input[name="w18"]').first().check()
+        cy.get("#w20").type("5")
+        cy.get("input[class='submitButton']").click()
+        //cy.contains("Enter Form").click()
+
       })
 })
 
-export default{firstName};
+export default {firstName};
