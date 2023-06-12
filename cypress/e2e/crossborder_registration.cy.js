@@ -92,6 +92,16 @@ describe("Acccess the homepage menu of the platform",()=>{
         cy.contains("Check in for visit").click()
         cy.contains("Submit").click()
         cy.contains("Cross Border Screening").click()
+        cy.get('select[id="w8"]').select("Kenya")
+        cy.get("[type='radio']").first().check()
+        cy.get("[name='w12']").first().check()
+        cy.get("[name='w14']").first().check()
+        cy.get("[name='w16']").first().check()
+        cy.get("[name='w18']").first().check()
+        cy.get("#w20").type("20")
+        cy.get("#w22").select("Never")
+
+        cy.get('input[value="Enter Form"]').click()
 
       })
       
