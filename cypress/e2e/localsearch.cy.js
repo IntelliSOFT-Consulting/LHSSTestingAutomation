@@ -1,8 +1,12 @@
 import '../support/commands' 
 //import './new_user_registration_spec.cy'
+import { faker } from '@faker-js/faker';
+
+const firstName = faker.name.firstName();
+
 describe("Acccess the LHSS platform",()=>{
     beforeEach(()=>{
-        cy.base_url()
+        cy.baseurl()
         cy.login() 
         cy.contains("Login").click()
       
@@ -10,14 +14,30 @@ describe("Acccess the LHSS platform",()=>{
 
 
       })
-      it.only("test1-tests functionality of the search bar in the registration tab",()=>{
+      it("test1-tests functionality of the local search bar by name  in the CB Module",()=>{
         
          cy.contains("Cross Border").click()
+         cy.get(':nth-child(8) > .ng-pristine').type(firstName)
          cy.get('#local-results').click()
-       /* cy.get(':nth-child(2) > .ke-menu-item > .ke-icon > div > img').click()*/
+         cy.get('#search-patient').click()
+
+      
+      })
+      it.only("test2-tests functionality of the local search bar by ID in the CB Module",()=>{
+
+        const PatientID= () => Cypress._.random(0, 1e4)
+
+        const  patientID = PatientID();
+        
+         cy.contains("Cross Border").click()
+         cy.get(':nth-child(6) > .ng-pristine').type(patientID)
+         cy.get('#local-results').click()
+
+         cy.get('#search-patient').click()
+
+      
       })
 
       
     })
 
-  export default{firstName};
