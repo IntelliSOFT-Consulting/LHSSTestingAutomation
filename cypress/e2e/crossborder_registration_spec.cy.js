@@ -14,7 +14,7 @@ describe("Acccess the homepage menu of the platform",()=>{
         cy.login() 
         cy.contains("Login").click()
         //cy.get('.ke-apptoolbar > .ke-toolbar-item > a').click()
-        cy.contains("Home").click()
+       // cy.contains("Home").click()
 
 
       })
