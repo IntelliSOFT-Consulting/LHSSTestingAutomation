@@ -13,9 +13,7 @@ describe("Acccess the homepage menu of the platform",()=>{
         cy.base_url()
         cy.login() 
         cy.contains("Login").click()
-        //cy.get('.ke-apptoolbar > .ke-toolbar-item > a').click()
-       // cy.contains("Home").click()
-
+       
 
       })
       it.only("test1-tests querying functionality of the cross border module",()=>{

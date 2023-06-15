@@ -5,16 +5,14 @@ describe("Acccess the LHSS platform",()=>{
         cy.base_url()
         cy.login() 
         cy.contains("Login").click()
-        //cy.get('.ke-apptoolbar > .ke-toolbar-item > a').click()
+      
         cy.contains("Home").click()
 
 
       })
       it.only("test1-tests functionality of the search bar in the registration tab",()=>{
-        //cy.get('button[type=submit]').click()
         
-        cy.contains("Registration").click()
-
+         cy.contains("Cross Border").click()
         cy.get(':nth-child(2) > .ke-menu-item > .ke-icon > div > img').click()
       })
 
