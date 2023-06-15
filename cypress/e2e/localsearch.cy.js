@@ -13,7 +13,8 @@ describe("Acccess the LHSS platform",()=>{
       it.only("test1-tests functionality of the search bar in the registration tab",()=>{
         
          cy.contains("Cross Border").click()
-        cy.get(':nth-child(2) > .ke-menu-item > .ke-icon > div > img').click()
+         cy.get('#local-results').click()
+       /* cy.get(':nth-child(2) > .ke-menu-item > .ke-icon > div > img').click()*/
       })
 
       
