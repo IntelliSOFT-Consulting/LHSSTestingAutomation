@@ -3,7 +3,7 @@ import '../support/commands'
 
 describe("Acccess the LHSS platform",()=>{
     beforeEach(()=>{
-        cy.base_url()
+        cy.baseurl()
         
       })
 
