@@ -77,7 +77,7 @@ describe("Acccess the oncology platform",()=>{
         cy.contains("Cross Border Screening").click()
         cy.get('select[name="w8"]').select("Kenya")
         cy.get('input[name="w10"]').first().check()
-        cy.get('input[name="w12"]').first().check()
+        cy.get('select[name="w12"]').select("Fisherman")
         cy.get('input[name="w14"]').first().check()
         cy.get('input[name="w16"]').first().check()
         cy.get('input[name="w18"]').first().check()

@@ -86,14 +86,14 @@ describe("Acccess the homepage menu of the platform",()=>{
         const  nextOfKinphoneNumber = nextOfKincontact();
         cy.get("input[name='nextOfKinContact']").type(`07${nextOfKinphoneNumber}`,'{enter}')
 
-        cy.contains('Post to Registry').click()
-        cy.get("#createPatientBtn").click()
+        cy.contains('Create Patient').click()
+        //cy.get("#createPatientBtn").click()
         cy.contains("Check in for visit").click()
         cy.contains("Submit").click()
         cy.contains("Cross Border Screening").click()
         cy.get('select[id="w8"]').select("Kenya")
         cy.get("[type='radio']").first().check()
-        cy.get("[name='w12']").first().check()
+        cy.get("[name='w12']").select("Fisherman")
         cy.get("[name='w14']").first().check()
         cy.get("[name='w16']").first().check()
         cy.get("[name='w18']").first().check()
