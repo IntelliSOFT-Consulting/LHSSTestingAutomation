@@ -10,12 +10,11 @@ const emailAddress = familyName.toLowerCase() + firstName.toLowerCase()
 describe("Acccess the homepage menu of the platform",()=>{
     beforeEach(()=>{
       
-        cy.base_url()
+        cy.baseurl()
         cy.login() 
         cy.contains("Login").click()
-        //cy.get('.ke-apptoolbar > .ke-toolbar-item > a').click()
         cy.contains("Home").click()
-
+       
 
       })
       it.only("test1-tests querying functionality of the cross border module",()=>{
@@ -35,7 +34,7 @@ describe("Acccess the homepage menu of the platform",()=>{
         cy.wait(500)
         //cy.get('[ng-show="selectMpiQuery"] > .ng-pristine').type(firstName)
         cy.get('select[name="mpi-query"]').select("Cross border MPI")
-        cy.get('#local-results').click()
+        
         cy.get('#remote-results').click()
         cy.get("#search-patient").click().wait(3000)
         cy.contains("Create new patient").click()

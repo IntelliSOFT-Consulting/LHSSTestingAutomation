@@ -5,9 +5,6 @@ const firstName = faker.name.firstName();
 const middleName = faker.name.middleName();
 const familyName = faker.name.lastName();
 const emailAddress = familyName.toLowerCase() +firstName.toLowerCase() 
-/*const nextofkiame = faker.nameame();
-const nextofkinlastname = faker.name.nlastname();
-const nextOfKinName = nextofkiame + ' ' + nextofkinlastname*/
 
 
 describe("Acccess the oncology platform",()=>{
@@ -16,13 +13,12 @@ describe("Acccess the oncology platform",()=>{
         cy.baseurl()
         cy.login() 
         cy.contains("Login").click()
-        //cy.get('.ke-apptoolbar > .ke-toolbar-item > a').click()
         cy.contains("Home").click()
 
 
       })
       it.only("test1-tests fucntionality of the registration module",()=>{
-        //cy.get('button[type=submit]').click()
+    
         
         cy.contains("Registration").click()
 
