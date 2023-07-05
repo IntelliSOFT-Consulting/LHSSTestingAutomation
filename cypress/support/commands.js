@@ -1,5 +1,7 @@
 Cypress.Commands.add("baseurl",()=>{
     cy.visit("http://kenyaemrdhs2.intellisoftkenya.com/openmrs/login.htm")
+
+   //cy.visit("http://41.89.94.100:8080/openmrs/patientdashboardapp/main.page?patientId=24297&opdId=1000024&queueId=44641&")
 })
 
 Cypress.Commands.add('login',()=>{
