@@ -37,7 +37,8 @@ describe("Acccess the LHSS platform",()=>{
 
       
       })
-
+ //export default {firstName};
       
     })
 
+export default {firstName};
