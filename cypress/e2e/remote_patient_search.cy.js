@@ -1,11 +1,14 @@
 import '../support/commands' 
-//import './new_user_registration_spec.cy'
+
+const firstName = faker.name.firstName();
+const middleName = faker.name.middleName();
+const familyName = faker.name.lastName();
+
 describe("Acccess the LHSS platform",()=>{
     beforeEach(()=>{
         cy.baseurl()
         cy.login() 
         cy.contains("Login").click()
-        //cy.get('.ke-apptoolbar > .ke-toolbar-item > a').click()
         cy.contains("Home").click()
 
 
@@ -22,8 +25,7 @@ describe("Acccess the LHSS platform",()=>{
          cy.get('select[name="mpi-query"]').focus().select("Cross border MPI")
          cy.get('input[id="remote-results"]').check()
          cy.get('#search-patient').click()
-
-      
       })
     })
 
+export default{firstName};
