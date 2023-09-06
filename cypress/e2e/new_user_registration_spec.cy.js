@@ -78,9 +78,15 @@ describe("Acccess the oncology platform",()=>{
         cy.get('select[name="w8"]').select("Kenya")
        
         cy.get('input[name="w10"]').first().check()
+<<<<<<< HEAD
   
         //cy.get('select[name="w12"]').select("Fisherman")
        // cy.get('select[name="w12"]').select("Fisherman")
+=======
+        cy.get('select[name="w12"]').select("Fisherman")
+        cy.get("select[id='w12']").select("Fisherman")
+        //cy.get('input[name="w12"]').first().check()
+>>>>>>> 381996b0d52b16b6b9ebd560d9d29293acedbf99
         cy.get('input[name="w14"]').first().check()
         cy.get('input[name="w16"]').first().check()
         cy.get('input[name="w18"]').first().check()
