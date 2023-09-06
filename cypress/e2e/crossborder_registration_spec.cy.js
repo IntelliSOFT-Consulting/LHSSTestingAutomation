@@ -86,33 +86,24 @@ describe("Acccess the homepage menu of the platform",()=>{
         const  nextOfKinphoneNumber = nextOfKincontact();
         cy.get("input[name='nextOfKinContact']").type(`07${nextOfKinphoneNumber}`,'{enter}')
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         //cy.contains('Post to Registry').click()
         cy.get('#createPatientBtn').click()
-=======
         cy.contains('Create Patient').click()
         //cy.get("#createPatientBtn").click()
->>>>>>> 381996b0d52b16b6b9ebd560d9d29293acedbf99
-=======
         cy.contains('Create Patient').click()
         //cy.get("#createPatientBtn").click()
->>>>>>> 381996b0d52b16b6b9ebd560d9d29293acedbf99
+
         cy.contains("Check in for visit").click()
         cy.contains("Submit").click()
         cy.contains("Cross Border Screening").click()
         cy.get("[name='w8']").select("Uganda")
         cy.get("[type='radio']").first().check()
-<<<<<<< HEAD
-<<<<<<< HEAD
         cy.wait(1000)
       //  cy.get('select[name="w12"]').select("Fisherman")
-=======
+
         cy.get("[name='w12']").select("Fisherman")
->>>>>>> 381996b0d52b16b6b9ebd560d9d29293acedbf99
-=======
+
         cy.get("[name='w12']").select("Fisherman")
->>>>>>> 381996b0d52b16b6b9ebd560d9d29293acedbf99
         cy.get("[name='w14']").first().check()
         cy.get("[name='w16']").first().check()
         cy.get("[name='w18']").first().check()
